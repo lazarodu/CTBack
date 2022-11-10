@@ -81,6 +81,10 @@
             display: flex
         }
 
+        .flex-col {
+            flex-direction: column;
+        }
+
         .grid {
             display: grid
         }
@@ -395,7 +399,7 @@
 </head>
 
 <body class="antialiased">
-    <div class="relative flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+    <div class="relative flex flex-col items-center justify-center  px-6 min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
         @if (Route::has('login'))
         <div class="fixed top-0 right-0 px-6 py-4 sm:block">
             @auth
@@ -409,10 +413,20 @@
             @endauth
         </div>
         @endif
-        <br />
-        <br />
-        <br />
-        <br />
+        <div class="dark:text-white">
+            <h1 class="text-center">ATENÇÃO</h1>
+            <p>Normas de participação para os discentes dos cursos técnicos: </p>
+            <p>Para contabilizar a participação, o discente deve cumprir os requisitos:</p>
+            <p>1. Assistir à palestra de abertura (dia 16/11 às 14:00) ou encerramento (dia 18/11 às 14:00) que acontecerá no auditório do Campus.
+            </p>
+            <p>
+                2. Assistir à, no mínimo, quatro apresentações de trabalhos (dia 17/11) distribuídos da seguinte forma: dois no período da manhã e dois no período da tarde.
+                Portanto, não será permitida a presença em apenas um dos dois turnos.
+            </p>
+            <p>
+                Os discentes que irão apresentar poderão assistir a, pelo menos, dois trabalhos dos demais colegas
+            </p>
+        </div>
         <div>
             <img src="img/banner.jpeg" alt="banner" />
         </div>
