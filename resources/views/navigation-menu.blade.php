@@ -147,6 +147,11 @@
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
         </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-jet-responsive-nav-link href="{{ route('inscricao') }}" :active="request()->routeIs('inscricao')">
+                Inscrição
+            </x-jet-responsive-nav-link>
+        </div>
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
