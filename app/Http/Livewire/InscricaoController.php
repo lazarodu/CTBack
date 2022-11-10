@@ -19,14 +19,15 @@ class InscricaoController extends Component
     public function render()
     {
         $inscricoes = Inscricao::where('user_id', $this->userLogged)->get();
+        $inscritos = [];
         foreach ($inscricoes as $inscricao) {
-            array_push($this->programId, $inscricao->programacao_id);
+            array_push($inscritos, $inscricao->programacao_id);
         }
         $programacao = Programacao::whereNotNull('publico')
             ->orderBy('horario')
             ->orderBy('atividade')
             ->get();
-        return view('livewire.inscricao-controller', compact('programacao'));
+        return view('livewire.inscricao-controller', compact('programacao', 'inscritos'));
     }
     public function inscrever()
     {
@@ -52,5 +53,12 @@ class InscricaoController extends Component
         } else {
             $this->inscricaoMessage = "Marque ao menos uma atividade para participar!!!";
         }
+    }
+    public function cancelarInscricao($programacao_id)
+    {
+        $inscricao = Inscricao::where('user_id', $this->userLogged)
+            ->where('programacao_id', $programacao_id)
+            ->get();
+        $inscricao[0]->delete();
     }
 }

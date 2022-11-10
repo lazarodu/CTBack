@@ -9,7 +9,7 @@
                     <th>Horário</th>
                     <th>Atividade</th>
                     <th>Local</th>
-                    <th>Público</th>
+                    <th>Vagas</th>
                     <th>Inscrever</th>
                 </tr>
             </thead>
@@ -21,13 +21,17 @@
                     <td class="border">{{$program->local}}</td>
                     <td class="border">{{$program->publico}}</td>
                     <td class="flex justify-center items-stretch">
-                        <input class="w-7 h-7" type="checkbox" wire:model="programId" value="{{$program->id}}" />
+                        @if(in_array($program->id,$inscritos))
+                        <button type="button" class="border rounded-lg p-2 bg-red-400" wire:click="cancelarInscricao({{$program->id}})">Cancelar Inscrição</buuton>
+                            @elseif($program->publico > 0)
+                            <input class="w-7 h-7" type="checkbox" wire:model="programId" value="{{$program->id}}" />
+                            @endif
                     </td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
-        <div class="bg-red-400 text-white">
+        <div class="bg-green-400">
             <p>{{$inscricaoMessage}}</p>
         </div>
         <button type="button" class="bg-sky-500 text-white font-bold rounded-lg p-2" wire:click="inscrever()">Inscrever</button>
