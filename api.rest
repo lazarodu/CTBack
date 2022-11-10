@@ -1,0 +1,32 @@
+######### Autenticação do usuário
+POST http://127.0.0.1:8000/api/login HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{
+    "email": "lazarodu@gmail.com",
+    "password": "12345678"
+}
+
+######### Logout do usuário
+GET http://127.0.0.1:8000/api/logout HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 4|k0jHK8PxZfMN57VJjpyWOdpL9HPlE37W7WSotryI
+
+######### Programação
+GET http://127.0.0.1:8000/api/program HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 6|F51lOr2h2Zipd2W95Fuo9oDCOlADbJvuZ6OK0bFw
+
+######### Autenticação do usuário
+POST http://127.0.0.1:8000/api/presence HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 6|F51lOr2h2Zipd2W95Fuo9oDCOlADbJvuZ6OK0bFw
+
+{
+    "user_id": 1,
+    "programacao_id": 1
+}

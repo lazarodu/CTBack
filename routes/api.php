@@ -3,6 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\PresencaController;
+use App\Http\Controllers\API\ProgramController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,6 +20,8 @@ use App\Http\Controllers\API\AuthController;
 Route::post('/login', [AuthController::class, 'login']);
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/logout', [AuthController::class, 'logout']);
+    Route::get('/program', [ProgramController::class, 'index']);
+    Route::post('/presence', [PresencaController::class, 'store']);
 });
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
