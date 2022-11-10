@@ -1,2 +1,2 @@
-release: php artisan migrate --force && npm install && npm run build
+release: php artisan migrate:fresh --seed --force && npm install && npm run build
 web: vendor/bin/heroku-php-apache2 public/
