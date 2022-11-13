@@ -4,11 +4,11 @@
             QrCode
         </h2>
     </x-slot>
-    <div>
-        <div class="flex justify-center align-center px-96">
+    <div class="py-12 px-6">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             {!! QrCode::size(300)->generate(Auth::user()->id) !!}
+            <h1 class="flex  justify-center align-center text-lg">{{Auth::user()->name}}</h1>
+            <h1 class="flex  justify-center align-center text-lg">Apresente este QrCode para registrar sua presença!</h1>
         </div>
-        <h1 class="flex  justify-center align-center text-lg">{{Auth::user()->name}}</h1>
-        <h1 class="flex  justify-center align-center text-lg">Apresente este QrCode para registrar sua presença!</h1>
     </div>
 </x-app-layout>
