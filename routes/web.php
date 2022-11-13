@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Livewire\QrCodeController;
+use App\Http\Controllers\QrCodeController;
 use App\Http\Livewire\InscricaoController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,5 +28,5 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
     Route::get('/inscricao', InscricaoController::class)->name('inscricao');
-    Route::get('/qrcode', QrCodeController::class)->name('qrcode');
+    Route::get('/qrcode', [QrCodeController::class, 'index'])->name('qrcode');
 });
