@@ -18,11 +18,11 @@ use App\Http\Controllers\API\ProgramController;
 */
 
 Route::post('/login', [AuthController::class, 'login']);
-Route::middleware('auth:sanctum')->group(function () {
-    Route::get('/logout', [AuthController::class, 'logout']);
-    Route::get('/program', [ProgramController::class, 'index']);
-    Route::post('/presence', [PresencaController::class, 'store']);
-});
+// Route::middleware('auth:sanctum')->group(function () {
+Route::get('/logout', [AuthController::class, 'logout']);
+Route::get('/program', [ProgramController::class, 'index']);
+Route::post('/presence', [PresencaController::class, 'store']);
+// });
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
