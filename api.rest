@@ -1,5 +1,5 @@
 ######### Autenticação do usuário
-POST http://127.0.0.1:8000/api/login HTTP/1.1
+POST https://semanacet.cefetvga.pro.br/api/login HTTP/1.1
 Content-Type: application/json
 Accept: application/json
 
@@ -15,16 +15,16 @@ Accept: application/json
 Authorization: Bearer 4|k0jHK8PxZfMN57VJjpyWOdpL9HPlE37W7WSotryI
 
 ######### Programação
-GET http://127.0.0.1:8000/api/program HTTP/1.1
+GET https://semanacet.cefetvga.pro.br/api/program HTTP/1.1
 Content-Type: application/json
 Accept: application/json
-Authorization: Bearer 6|F51lOr2h2Zipd2W95Fuo9oDCOlADbJvuZ6OK0bFw
+Authorization: Bearer 21|K2K4i9nmJI3F6c6Jk6OPkhETrybKX9OlthpTaX7f
 
 ######### Autenticação do usuário
 POST http://127.0.0.1:8000/api/presence HTTP/1.1
 Content-Type: application/json
 Accept: application/json
-Authorization: Bearer 6|F51lOr2h2Zipd2W95Fuo9oDCOlADbJvuZ6OK0bFw
+Authorization: Bearer 21|K2K4i9nmJI3F6c6Jk6OPkhETrybKX9OlthpTaX7f
 
 {
     "user_id": 1,
