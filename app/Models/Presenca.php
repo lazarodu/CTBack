@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Presenca extends Model
 {
     use HasFactory;
+    public function programacao()
+    {
+        return $this->belongsTo(Programacao::class);
+    }
 }
